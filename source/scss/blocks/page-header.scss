@@ -250,7 +250,7 @@
       width: 0;
       height: 2px;
       background-color: $c-light;
-      transition: width $anim-duration ease-in-out;
+      transition: width $ad-5 ease-in-out;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         right: 0;
