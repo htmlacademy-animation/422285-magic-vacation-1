@@ -17,7 +17,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-  transition: color $ad-3 ease-in-out;
+  transition: color 0.3s ease-in-out;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -36,11 +36,11 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
-    transition: all $ad-3 ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   body.loaded &::before {
-    transition: width $ad-5 cubic-bezier(0.18, 1.85, 1, 0.82), height $ad-5 cubic-bezier(0.18, 1.85, 1, 0.82);
+    transition: width 0.5s cubic-bezier(0.18, 1.85, 1, 0.82), height 0.5s cubic-bezier(0.18, 1.85, 1, 0.82);
   }
 
   svg {
