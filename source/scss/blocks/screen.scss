@@ -362,3 +362,20 @@
 .screen--rules {
   background-color: $c-dark;
 }
+
+.screen__transition {
+  background-color: $c-dark;
+  position: absolute;
+  top: 120vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: top 300ms ease-out, opacity 200ms ease-out 300ms;
+  z-index: 9;
+  opacity: 1;
+
+  &--open {
+    top: 0;
+    opacity: 0;
+  }
+}
