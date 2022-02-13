@@ -203,7 +203,7 @@
   p {
     margin: 0;
     position: relative;
-    right: -20px;
+    transform: translate(20px);
     opacity: 0;
     animation: show-rules-text 0.5s forwards;
 
@@ -251,16 +251,12 @@
 
 @keyframes show-rules-text {
   to {
-    right: 0;
+    transform: translate(0);
     opacity: 1;
   }
 }
 
 @keyframes show-rules-btn {
-  50% {
-    opacity: 1;
-  }
-
   75% {
     color: transparent;
   }
