@@ -175,7 +175,6 @@
   border: 2px solid transparent;
   border-radius: 50%;
   opacity: 0;
-  transition: all linear 0.2s;
   bottom: -20px;
 
   @media (min-width: $stop-scaling) {
@@ -266,19 +265,25 @@
 
 .social-block--active {
   .social-block__link {
-    opacity: 1;
-    bottom: 0;
+    animation: show-social-block 0.2s forwards;
 
     &--fb {
-      transition-delay: 0.15s;
+      animation-delay: 0.15s;
     }
 
     &--insta {
-      transition-delay: 0.25s;
+      animation-delay: 0.25s;
     }
 
     &--vk {
-      transition-delay: 0.35s;
+      animation-delay: 0.35s;
     }
+  }
+}
+
+@keyframes show-social-block {
+  to {
+    opacity: 1;
+    bottom: 0;
   }
 }
