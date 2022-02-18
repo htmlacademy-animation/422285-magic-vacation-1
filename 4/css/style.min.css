@@ -3027,11 +3027,11 @@ body.loaded .page-header__nav {
   margin: 0;
   list-style: none;
   counter-reset: li;
-  column-count: 2;
-  column-gap: 9.6rem;
   margin: auto;
   padding-top: 7rem;
   max-width: 69.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 }
 @media (min-width: 2000px) {
   .rules__list {
@@ -3042,7 +3042,7 @@ body.loaded .page-header__nav {
 }
 @media (max-width: 1024px) and (orientation: portrait) {
   .rules__list {
-    column-count: auto;
+    grid-template-columns: 1fr;
     column-gap: 0;
     padding: 0 2.5rem;
   }
@@ -3065,11 +3065,33 @@ body.loaded .page-header__nav {
   padding-left: 6.5rem;
   break-inside: avoid;
 }
+.rules__item:nth-child(1) {
+  order: 1;
+}
+.rules__item:nth-child(2) {
+  order: 3;
+}
 .rules__item:nth-child(2)::before, .rules__item:nth-child(2) p {
   animation-delay: 0.2s;
 }
+@media (max-width: 1024px) {
+  .rules__item:nth-child(2) {
+    order: 2;
+  }
+}
+.rules__item:nth-child(3) {
+  order: 2;
+}
 .rules__item:nth-child(3)::before, .rules__item:nth-child(3) p {
   animation-delay: 0.4s;
+}
+@media (max-width: 1024px) {
+  .rules__item:nth-child(3) {
+    order: 3;
+  }
+}
+.rules__item:nth-child(4) {
+  order: 4;
 }
 .rules__item:nth-child(4)::before, .rules__item:nth-child(4) p {
   animation-delay: 0.6s;
@@ -3154,7 +3176,6 @@ body.loaded .page-header__nav {
   font-size: 0;
   opacity: 0;
   color: transparent;
-  animation: show-rules-btn 0.3s 0.8s forwards;
 }
 @media (min-width: 2000px) {
   .rules__link {
@@ -3162,11 +3183,17 @@ body.loaded .page-header__nav {
     right: 56px;
   }
 }
+@media (min-width: 1024px) {
+  .rules__link {
+    animation: show-rules-btn 0.3s 0.8s forwards;
+  }
+}
 @media (max-width: 1024px) and (orientation: portrait) {
   .rules__link {
-    left: 0;
+    width: 77px;
     right: 0;
     bottom: 4rem;
+    animation: show-rules-btn-mobile 0.5s 0.8s forwards;
   }
 }
 @media (max-width: 1024px) and (orientation: landscape) {
@@ -3200,6 +3227,17 @@ body.loaded .page-header__nav {
     opacity: 1;
     font-size: inherit;
     color: #5f458c;
+  }
+}
+@keyframes show-rules-btn-mobile {
+  75% {
+    color: transparent;
+  }
+  100% {
+    opacity: 1;
+    font-size: inherit;
+    color: #5f458c;
+    width: calc(100vw - 2rem);
   }
 }
 .screen {
