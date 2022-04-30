@@ -265,8 +265,9 @@
   .form__field {
     max-width: 60px;
     padding: 0;
-    animation: showFormField 1s ease-out forwards;
+    animation: showFormField 1.3s ease-out forwards;
     color: transparent;
+    opacity: 0;
 
     &::placeholder {
       color: currentColor;
@@ -476,15 +477,22 @@
 }
 
 @keyframes showFormField {
+  20% {
+    max-width: 60px;
+    opacity: 1;
+  }
+
   60% {
     max-width: 100%;
     padding: 0 5.6rem;
     color: transparent;
+    opacity: 1;
   }
   
   100% {
     max-width: 100%;
     padding: 0 5.6rem;
     color: #5f458c;
+    opacity: 1;
   }
 }
