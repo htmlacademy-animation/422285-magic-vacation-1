@@ -170,3 +170,18 @@
     font-size: 48px;
   }
 }
+
+.text__word {
+  display: inline-flex;
+  overflow-y: clip;
+  line-height: 125%;
+
+  span {
+    display: inline-flex;
+    transform: translate3d(0, 100%, 0);
+
+    .active & {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

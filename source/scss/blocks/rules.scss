@@ -124,42 +124,26 @@
   padding-left: 6.5rem;
   break-inside: avoid;
 
-  &:nth-child(1) {
-    order: 1;
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      order: $i;
+
+      &::before,
+      p {
+        animation-delay: (0.2s * ($i - 1));
+      }
+    }
   }
 
   &:nth-child(2) {
-    order: 3;
-
-    &::before,
-    & p {
-      animation-delay: 0.2s;
-    }
-
-    @media (max-width: $tablet) {
-      order: 2;
-    }
-  }
-
-  &:nth-child(3) {
-    order: 2;
-
-    &::before,
-    & p {
-      animation-delay: 0.4s;
-    }
-
-    @media (max-width: $tablet) {
+    @media (min-width: ($tablet + 1)) {
       order: 3;
     }
   }
 
-  &:nth-child(4) {
-    order: 4;
-
-    &::before,
-    & p {
-      animation-delay: 0.6s;
+  &:nth-child(3) {
+    @media (min-width: ($tablet + 1)) {
+      order: 2;
     }
   }
 
