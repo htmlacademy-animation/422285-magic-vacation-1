@@ -255,6 +255,22 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  &--prev {
+    position: relative;
+    left: -60px;
+    transform: rotate(-90deg);
+    animation: showSliderControll 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  &--next {
+    position: relative;
+    left: 60px;
+    transform: rotate(90deg);
+    animation: showSliderControll 1s ease-out forwards;
+    opacity: 0;
+  }
 }
 
 .slider__pagination.swiper-pagination {
@@ -269,6 +285,8 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;

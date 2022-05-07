@@ -145,6 +145,20 @@
     opacity: 1;
   }
 
+  .js-menu-link {
+    body.second &:hover {
+      color: $c-second;
+    }
+  
+    body.third &:hover {
+      color: $c-third;
+    }
+  
+    body.fourth &:hover {
+      color: $c-fourth;
+    }
+  }
+
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
     top: 0;
@@ -296,6 +310,17 @@
         left: 0;
         width: 100%;
 
+        body.second & {
+          background-color: $c-second;
+        }
+    
+        body.third & {
+          background-color: $c-third;
+        }
+    
+        body.fourth & {
+          background-color: $c-fourth;
+        }
       }
     }
   }
