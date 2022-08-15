@@ -19,6 +19,18 @@
   border-radius: 50%;
   transition: color 0.3s ease-in-out;
 
+  body.second & {
+    color: $c-second;
+  }
+
+  body.third & {
+    color: $c-third;
+  }
+
+  body.fourth & {
+    color: $c-fourth;
+  }
+
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
   }
@@ -196,15 +208,15 @@
     color: $c-purple;
 
     body.second & {
-      color: #56a1ff;
+      color: $c-second;
     }
 
     body.third & {
-      color: #66bcd6;
+      color: $c-third;
     }
 
     body.fourth & {
-      color: #ca7af3;
+      color: $c-fourth;
     }
   }
 
