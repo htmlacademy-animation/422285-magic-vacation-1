@@ -22,13 +22,13 @@ export default () => {
               document.body.className = "loaded";
             } else if (storySlider.activeIndex === 2 || storySlider.activeIndex === 3) {
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg"), linear-gradient(180deg, rgba(45, 54, 179, 0) 0%, #2A34B0 16.85%)`;
-              document.body.className = "loaded -blue";
+              document.body.className = "loaded second";
             } else if (storySlider.activeIndex === 4 || storySlider.activeIndex === 5) {
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg"), linear-gradient(180deg, rgba(92, 138, 198, 0) 0%, #5183C4 16.85%)`;
-              document.body.className = "loaded -gray-blue";
+              document.body.className = "loaded third";
             } else if (storySlider.activeIndex === 6 || storySlider.activeIndex === 7) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg"), linear-gradient(180deg, rgba(45, 39, 63, 0) 0%, #2F2A42 16.85%)`;
-              document.body.className = "loaded -dark-purple";
+              document.body.className = "loaded fourth";
             }
           },
           resize: () => {

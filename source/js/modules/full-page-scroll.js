@@ -52,6 +52,8 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
+    const screeenId = this.screenElements[this.activeScreen].getAttribute("id");
+
     if (this.activeScreen === 2) {
       document.querySelector(`.screen__transition`).classList.add(`screen__transition--open`);
       setTimeout(() => {
@@ -64,6 +66,7 @@ export default class FullPageScroll {
           this.screenElements[this.activeScreen].classList.add(`active`);
         }, 100);
       }, 300);
+      document.documentElement.setAttribute("data-screen", screeenId);
     } else {
       this.screenElements.forEach((screen) => {
         screen.classList.add(`screen--hidden`);
@@ -74,6 +77,7 @@ export default class FullPageScroll {
         this.screenElements[this.activeScreen].classList.add(`active`);
         document.querySelector(`.screen__transition`).classList.remove(`screen__transition--open`);
       }, 100);
+      document.documentElement.setAttribute("data-screen", screeenId);
     }
   }
 

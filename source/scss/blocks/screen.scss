@@ -36,23 +36,29 @@
   left: 0;
   right: 0;
   z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+
+  [data-screen="rules"] & {
+    opacity: 1;
+  }
 }
 
 .screen__footer {
   position: absolute;
-  bottom: 0;
+  bottom: -100px;
   left: 0;
   right: 0;
   color: $c-dark;
   background-color: $c-light;
-  z-index: 1;
-  opacity: 0;
-  margin-bottom: -100%;
-  transition: opacity 0.5s cubic-bezier(.56, 1.13, 1, 1), margin-bottom 0.5s cubic-bezier(.56, 1.13, 1, 1);
+  z-index: 10;
+  transition: bottom 0.5s ease-in-out;
 
-  body.loaded & {
-    opacity: 1;
-    margin-bottom: 0;
+  [data-screen="top"] &,
+  [data-screen="prizes"] &,
+  [data-screen="rules"] & {
+    bottom: 0;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -181,7 +187,7 @@
 .screen__footer-announce {
   display: none;
   margin-bottom: 1.6rem;
-  padding: 3rem 0 0;
+  padding: 3rem 0 0 3.2rem;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: block;
@@ -208,6 +214,10 @@
 }
 
 .screen__footer-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
   padding: 0.8rem 0;
   text-transform: uppercase;
   text-align: center;
@@ -236,10 +246,19 @@
   }
 
   p {
+    position: absolute;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     margin: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    [data-screen="top"] &.screen__footer-note--top,
+    [data-screen="prizes"] &.screen__footer-note--prizes,
+    [data-screen="rules"] &.screen__footer-note--rules {
+      opacity: 1;
+    }
   }
 
   svg {
